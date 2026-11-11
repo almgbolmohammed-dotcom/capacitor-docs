@@ -1,3 +1,27 @@
 {
-  "extends": "@docusaurus/tsconfig/tsconfig.json"
+  "compilerOptions": {
+    "target": "es2022",
+    "lib": ["es2023", "dom", "dom.iterable"],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "strictNullChecks": true,
+    "noImplicitAny": false,
+    "types": ["vite/client"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@workspace/api-client-react": ["./src/workspace/api-client-react/index.ts"],
+      "@workspace/api-zod": ["./src/workspace/api-zod/index.ts"],
+      "@workspace/db": ["./src/local-api/db.ts"],
+      "express": ["./src/local-api/express-shim.ts"]
+    }
+  },
+  "include": ["src/**/*"]
 }
